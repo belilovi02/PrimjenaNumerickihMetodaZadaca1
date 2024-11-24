@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PNMuSI - Zadatak 3 i 4 - Metoda sekanti</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <!-- Navigacija -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Primjena Numeričkih Metoda</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./zadatak1_4.html">Zadatak 1 i 4 - Bisekcija</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./zadatak2_4.html">Zadatak 2 i 4 - Metoda proste iteracije</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./zadatak3_4.html">Zadatak 3 i 4 - Metoda sekanti</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./zadatak5.html">Zadatak 5</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Glavni sadržaj -->
+    <div class="container my-5">
+      <h3 class="text-center mb-4">Metoda Sekanti</h3>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <p>Izbor funkcije:</p>
+          <div class="d-flex justify-content-center">
+            <div class="form-check form-check-inline">
+              <input type="radio" class="btn-check" id="funkcija1" name="funkcija" autocomplete="off" checked />
+              <label class="btn btn-light" for="funkcija1">y = x<sup>2</sup> - 2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="btn-check" id="funkcija2" name="funkcija" autocomplete="off" />
+              <label class="btn btn-light" for="funkcija2">y = x<sup>3</sup> - x<sup>2</sup> + 2</label>
+            </div>
+          </div>
+          <div class="form-check mt-2 mb-2">
+            <input class="form-check-input" type="checkbox" value="" id="automatskoPopunjavanje" />
+            <label class="form-check-label" for="automatskoPopunjavanje">
+              Automatski popuni parametre (Testni podaci)
+            </label>
+          </div>
+          <label for="x0" class="form-label mt-3">Početna aproksimacija x<sub>0</sub></label>
+          <input type="number" class="form-control" id="x0" placeholder="Unesite x0" />
+
+          <label for="x1" class="form-label mt-3">Početna aproksimacija x<sub>1</sub></label>
+          <input type="number" class="form-control" id="x1" placeholder="Unesite x1" />
+
+          <label for="epsilon" class="form-label mt-3">Tačnost</label>
+          <input type="number" class="form-control" id="epsilon" placeholder="Unesite tačnost (npr. 0.001)" />
+
+          
+
+          <button type="button" class="btn btn-success w-100 mt-4" id="rijesi">Riješi</button>
+        </div>
+      </div>
+
+      <h3 class="text-center mt-4" id="rjesenje"></h3>
+      <h3 class="text-center" id="greska"></h3>
+
+      <!-- Tabela rezultata -->
+      <table class="table table-striped container mt-4">
+        <thead>
+          <tr>
+            <th>Iteracija</th>
+            <th>x<sub>0</sub></th>
+            <th>x<sub>1</sub></th>
+            <th>x<sub>2</sub></th>
+            <th>Vrijednost f(x<sub>1</sub>)</th>
+            <th>Greška</th>
+          </tr>
+        </thead>
+        <tbody id="tabela"></tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-muted py-3">
+      Zadaca 1 iz predmeta <strong>Primjena Numeričkih metoda u softverskom inženjerstvu</strong><br />
+      Autor: Belma Djelilovic<br />
+      Indeks: II 113<br />
+     
+  </footer>
+
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../script/zad3_4.js"></script>
+  </body>
+</html>
